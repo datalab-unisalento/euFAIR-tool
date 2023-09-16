@@ -599,12 +599,10 @@ class PortalPage(tk.Frame):
 
     def on_select_holder(self, e):
         selected_el = self.results_holder.selection()
-        print(selected_el)
         values = None
         devalue = []
         for item in selected_el:
             values = self.results.item(item)['values']
-            print(values)
             for value in values[0]:
                 if not value:
                     value = ''
@@ -621,7 +619,6 @@ class PortalPage(tk.Frame):
 
     def on_return_holder(self, e):
         data_found = database.search_holder(self.text_meta_holder.get("1.0", "end-1c"))
-        print(data_found)
         self.results_holder.delete(*self.results_holder.get_children())
         self.text_meta_holder.delete("1.0", tk.END)
         for data in data_found:
@@ -644,11 +641,9 @@ class PortalPage(tk.Frame):
     def on_select(self, e):
         if self.search_frame.index(self.search_frame.select()) == 0:
             selected_el = self.results.selection()
-            print(selected_el)
             values = None
             for item in selected_el:
                 values = self.results.item(item)['values']
-                print(values)
             if values:
                 self.name_label.config(text=self.results.item(selected_el[0])['values'][1])
                 self.id_label.config(text=self.results.item(selected_el[0])['values'][0])
@@ -661,11 +656,9 @@ class PortalPage(tk.Frame):
 
         elif self.search_frame.index(self.search_frame.select()) == 1:
             selected_el = self.results_holder.selection()
-            print(selected_el)
             values = None
             for item in selected_el:
                 values = self.results_holder.item(item)['values']
-                print(values)
             if values:
                 self.name_label.config(text=self.results_holder.item(selected_el[0])['values'][1])
                 self.id_label.config(text=self.results_holder.item(selected_el[0])['values'][0])
@@ -897,8 +890,6 @@ class PortalPageITA(tk.Frame):
         select_label.bind('<Leave>', self.on_select_leave)
         select_label.bind('<Button-1>', lambda x: controller.show_frame(EvaluationPage))
 
-
-
         search_bar_holder = tk.Label(search_holder)
         search_bar_holder.grid(row=0, column=0)
         search_bar_holder.config(image=self.search_bar)
@@ -1039,12 +1030,10 @@ class PortalPageITA(tk.Frame):
 
     def on_select_holder(self, e):
         selected_el = self.results_holder.selection()
-        print(selected_el)
         values = None
         devalue = []
         for item in selected_el:
             values = self.results.item(item)['values']
-            print(values)
             for value in values[0]:
                 if not value:
                     value = ''
@@ -1061,7 +1050,6 @@ class PortalPageITA(tk.Frame):
 
     def on_return_holder(self, e):
         data_found = database.search_holder(self.text_meta_holder.get("1.0", "end-1c"))
-        print(data_found)
         self.results_holder.delete(*self.results_holder.get_children())
         self.text_meta_holder.delete("1.0", tk.END)
         for data in data_found:
@@ -1084,11 +1072,9 @@ class PortalPageITA(tk.Frame):
     def on_select(self, e):
         if self.search_frame.index(self.search_frame.select()) == 0:
             selected_el = self.results.selection()
-            print(selected_el)
             values = None
             for item in selected_el:
                 values = self.results.item(item)['values']
-                print(values)
             if values:
                 self.name_label.config(text=self.results.item(selected_el[0])['values'][1])
                 self.id_label.config(text=self.results.item(selected_el[0])['values'][0])
@@ -1101,11 +1087,9 @@ class PortalPageITA(tk.Frame):
 
         elif self.search_frame.index(self.search_frame.select()) == 1:
             selected_el = self.results_holder.selection()
-            print(selected_el)
             values = None
             for item in selected_el:
                 values = self.results_holder.item(item)['values']
-                print(values)
             if values:
                 self.name_label.config(text=self.results_holder.item(selected_el[0])['values'][1])
                 self.id_label.config(text=self.results_holder.item(selected_el[0])['values'][0])
@@ -1443,7 +1427,6 @@ class LinkFileEvaluationPage(tk.Frame):
         try:
             primary_keys = list(data.keys())  # Chiavi primarie
             num_primary_keys = len(primary_keys)  # Numero di chiavi primarie
-            print(num_primary_keys)
             fig, axs = plt.subplots(2, 2, figsize=(9, 6))  # Creazione dei grafici
 
             for i, primary_key in enumerate(primary_keys):

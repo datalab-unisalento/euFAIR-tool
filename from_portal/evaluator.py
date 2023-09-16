@@ -208,11 +208,7 @@ def data_evaluating(dataset_name, payload, link, method, id_europa):
 
 
 def update_eval():
-    # dataset_ids = database.retrieve_id_to_update()
-    dataset_ids = (('1653a9ef-529f-4b65-91d7-894d19dea2e5',
-                    'c_g919_dataset_ferrovia-dello-stato',
-                    'opendata'),)
-    # dataset_ids = None
+    dataset_ids = database.retrieve_id_to_update()
 
     if dataset_ids:
         event_bus.publish({'type': 'portal_start'})

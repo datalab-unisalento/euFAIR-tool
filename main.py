@@ -19,15 +19,15 @@ def do_work():
         #     from_portal.preliminary.search_for_update()
         # except requests.RequestException:
         #     pass
-        try:
-            from_portal.preliminary.property_check()
-        except settings.preload.PreloadingFileError:
-            pass
-
-        try:
-            from_portal.evaluator.update_eval()
-        except Exception as e:
-            mprint(str(e), bc.RED)
+        # try:
+        #     from_portal.preliminary.property_check()
+        # except settings.preload.PreloadingFileError:
+        #     pass
+        #
+        # try:
+        #     from_portal.evaluator.update_eval()
+        # except Exception as e:
+        #     mprint(str(e), bc.RED)
 
         event = {'type': 'update_done_toplevel'}
 
